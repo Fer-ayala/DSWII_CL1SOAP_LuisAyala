@@ -1,0 +1,60 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.cibertec.edu.pe/ws/objects"
+           targetNamespace="http://www.cibertec.edu.pe/ws/objects"
+           elementFormDefault="qualified">
+    <!--Obtener publicaciones-->
+    <xs:element name="getPublicacionesRequest">
+        <xs:complexType>
+            <xs:sequence />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getPublicacionesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="publicaciones" type="tns:publicacionws"
+                            maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Buscar publicacion x ID-->
+    <xs:element name="getPublicacionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getPublicacionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="publicacion" type="tns:publicacionws" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Guardar y Actualizar publicacion-->
+    <xs:element name="postPublicacionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="publicacion" type="tns:publicacionws" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="postPublicacionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="publicacion" type="tns:publicacionws" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="publicacionws">
+        <xs:sequence>
+            <xs:element name="iddomicilio" type="xs:int"/>
+            <xs:element name="descdomicilio" type="xs:string"/>
+            <xs:element name="nrodomicilio" type="xs:int"/>
+            <xs:element name="refdomicilio" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
