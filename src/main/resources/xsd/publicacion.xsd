@@ -50,10 +50,10 @@
 
     <xs:complexType name="publicacionws">
         <xs:sequence>
-            <xs:element name="iddomicilio" type="xs:int"/>
-            <xs:element name="descdomicilio" type="xs:string"/>
-            <xs:element name="nrodomicilio" type="xs:int"/>
-            <xs:element name="refdomicilio" type="xs:string"/>
+            <xs:element name="idpublicacion" type="xs:int"/>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="resumen" type="xs:string"/>
+            <xs:element name="nomautor" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
